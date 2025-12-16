@@ -1,0 +1,116 @@
+# Claude Code Agentic Environment Configuration
+# Edit this file, then run: ./setup.sh
+
+# ============================================
+# 1. WHO I AM
+# ============================================
+
+role: "ML/AI Research"
+# Options: ML/AI Research, Web Development, Backend Systems, Data Engineering, Other
+
+stack:
+  - Python
+  - PyTorch
+  - JAX
+  - C++
+  - CUDA
+# Add/remove as needed
+
+tasks:
+  - Code analysis
+  - Bug fixing
+  - Implementation
+  - Paper reproduction
+  - Optimization discovery
+# Options: Code analysis, Bug fixing, Implementation, Paper reproduction, Optimization discovery
+
+# ============================================
+# 2. OPTIMIZATION
+# ============================================
+
+optimization:
+  primary: "Memory efficiency"
+  secondary: "Compute speed"
+# Options: Memory efficiency, Compute speed, Code readability
+
+# ============================================
+# 3. LANGUAGE
+# ============================================
+
+language: "Default"
+# Options: Default, English, Korean
+
+# ============================================
+# 4. INTERACTION STYLE
+# ============================================
+
+interaction:
+  web_search: "Ask before searching"
+  # Options: Search automatically, Ask before searching
+
+  response_style: "concise"
+  # Options:
+  #   concise: Short by default, expand on request
+  #   detailed: Always include detailed explanation
+
+  prompt_correction: "gradual"
+  # Options:
+  #   off: Never correct, always attempt to answer
+  #   gradual: Answer first attempt, suggest correction if result unclear
+  #   strict: Always suggest better question before answering vague ones
+
+  ambiguous_requests: "D"
+  # Options:
+  #   A: Refine → Execute immediately
+  #   B: Ask clarification first
+  #   C: Show refined interpretation → Execute
+  #   D: Refine → Present options → Execute after selection
+
+  multiple_approaches: "B"
+  # Options:
+  #   A: Choose best and execute
+  #   B: Present 2-3 options → ask for selection
+  #   C: Recommend 1 + briefly mention alternatives
+
+  change_handling:
+    affected_files: "Always"
+    diff_preview: "Always"
+    line_numbers: true
+    large_changes: "Plan first"
+    large_threshold:
+      files: 3
+      lines: 100
+  # Options:
+  #   affected_files/diff_preview: Always, Large only, Never
+  #   large_changes: Plan first, Execute directly
+  #   large_threshold: files/lines count to trigger "large changes" behavior
+
+# ============================================
+# 5. ADDITIONAL CONTEXT (optional)
+# ============================================
+
+additional_context: ""
+# Add any extra context for Claude
+
+# ============================================
+# 6. MODE KEYWORDS (optional)
+# ============================================
+
+modes:
+  detection: "soft"
+  # Options:
+  #   off: No auto-detection, user must specify [mode: xxx]
+  #   soft: Suggest detected mode, proceed unless user objects
+  #   auto: Detect and execute without confirmation
+
+  # Reference only (not configurable) - shows what modes exist and their triggers:
+  definitions:
+    explore: "Read-only, no modification suggestions"
+    fix: "Minimal changes, minimal explanation"
+    explain: "Concept explanation, no code changes"
+    plan: "Design work, execute only after approval"
+  detection_rules:
+    explore: "what is, how does, where is, show me, find"
+    fix: "fix, change, update, modify, correct, patch"
+    explain: "why, describe, explain, help me understand"
+    plan: "implement, add feature, refactor, redesign, create new"
