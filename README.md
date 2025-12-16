@@ -41,8 +41,11 @@ chmod +x setup.sh
 ```bash
 cd /path/to/your/project
 claude
+> /init
 > /setup-project
 ```
+
+> `/init`을 먼저 실행하여 프로젝트 분석 후 `/setup-project`로 글로벌 설정과 지식 시스템을 추가합니다.
 
 ---
 

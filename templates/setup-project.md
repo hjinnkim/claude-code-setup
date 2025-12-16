@@ -11,13 +11,7 @@ Extend /init with global settings and knowledge system.
 
 ## Steps
 
-### Step 1: Check /init status
-Check if .claude/CLAUDE.md exists in current project directory.
-
-- If exists: Proceed to Step 2
-- If not exists: Tell user "Please run `/init` first to analyze this project, then run `/setup-project` again." and **STOP here**.
-
-### Step 2: Merge global settings
+### Step 1: Merge global settings
 - Read ~/.claude/CLAUDE.md (global)
 - Read .claude/CLAUDE.md (project, from /init)
 - Append global settings AFTER /init content:
@@ -29,7 +23,7 @@ Check if .claude/CLAUDE.md exists in current project directory.
 - If markers already exist: replace content between markers only
 - Never modify /init-generated content above markers
 
-### Step 3: Create .claude/knowledge/
+### Step 2: Create .claude/knowledge/
 - Copy from ~/.claude/templates/ to .claude/knowledge/:
   - INDEX.md
   - project-structure.md
@@ -42,7 +36,7 @@ Check if .claude/CLAUDE.md exists in current project directory.
   - .claude/knowledge/papers/
   - .claude/commands/
 
-### Step 4: Fill project-structure.md
+### Step 3: Fill project-structure.md
 Use /init analysis to fill:
 - Directory layout (tree structure)
 - Entry points (main files)
@@ -50,7 +44,7 @@ Use /init analysis to fill:
 - Build/run commands (from package.json, Makefile, etc.)
 - Dependencies (from requirements.txt, package.json, etc.)
 
-### Step 5: Report
+### Step 4: Report
 ```
 ✅ Setup complete!
 
